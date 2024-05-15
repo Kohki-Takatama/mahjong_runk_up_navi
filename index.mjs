@@ -1,15 +1,26 @@
 // ESM
 import Fastify from 'fastify'
-import fs from 'fs'
+import fastifyStatic from '@fastify/static'
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
 
 const fastify = Fastify({
   logger: true
 })
 
-// Declare a route
+//静的ファイルの提供設定
+fastify.register(fastifyStatic, {
+  root: path.join(__dirname, 'public'),
+  prefix: '/public/', // リクエストのプレフィックスを設定
+})
+
+// ルートハンドラ
 fastify.get('/', function (request, reply) {
-  const stream = fs.createReadStream('./public/index.html')
-  reply.type('text/html').send(stream)
+  reply.sendFile('index.html')
 })
 
 // Run the server!

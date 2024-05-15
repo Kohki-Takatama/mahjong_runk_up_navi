@@ -861,6 +861,11 @@ html {
   }
 }
 
+.link {
+  cursor: pointer;
+  text-decoration-line: underline;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .btn {
     animation: button-pop var(--animation-btn, 0.25s) ease-out;
@@ -948,6 +953,16 @@ html {
   100% {
     background-position-y: 0;
   }
+}
+
+.link:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 @keyframes modal-pop {
