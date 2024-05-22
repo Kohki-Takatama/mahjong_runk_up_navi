@@ -1,9 +1,13 @@
 {
   "name": "mahjong_victory_conditions",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.mjs"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   },
   "author": "",
   "license": "ISC",
