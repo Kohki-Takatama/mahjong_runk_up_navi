@@ -7,7 +7,7 @@
     "start": "node index.mjs"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.9.0"
   },
   "author": "",
   "license": "ISC",
