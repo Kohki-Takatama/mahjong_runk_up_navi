@@ -3,18 +3,218 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/public/styles.css" rel="stylesheet">
+    <link href="/public/styles.css" rel="stylesheet" />
     <title>Document</title>
+    <style>
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+    </style>
   </head>
   <body>
-    <div class="flex flex-row">
-      <button class="btn" id="btn1">Button 1</button>
-      <button>Button 2</button>
-      <button>Button 3</button>
+    <div role="tablist" class="tabs tabs-bordered">
+      <label for="input_tab_radio_1" role="tab" class="tab tab-active">
+        点数入力
+        <input
+          type="radio"
+          name="tab_select"
+          class="hidden"
+          id="input_tab_radio_1"
+          checked
+        />
+      </label>
+      <label for="input_tab_radio_2" role="tab" class="tab">
+        着順条件
+        <input type="radio" name="tab_select" class="hidden" id="input_tab_radio_2" />
+      </label>
     </div>
-    <div class="text-lg text-center bg-gray-500 mx-auto p-4 w-1/2">
-      Hello World
+
+    <div id="tab_content_1" class="card tab-content active">
+      <div class="overflow-x-auto">
+        <table class="table">
+          <!-- head -->
+          <thead>
+            <tr>
+              <th>視点</th>
+              <th>親</th>
+              <th>点数</th>
+              <th>対局中リーチ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- row 1 -->
+            <tr class="">
+              <td>
+                <label class="swap swap-flip">
+                  <input
+                    type="radio"
+                    name="perspective_select"
+                    class="hidden"
+                    checked
+                  />
+                  <div class="swap-on btn btn-neutral">視点</div>
+                  <div class="swap-off btn"></div>
+                </label>
+              </td>
+              <td>
+                <label class="swap swap-flip">
+                  <input
+                    type="radio"
+                    name="parent_select"
+                    class="hidden"
+                    checked
+                  />
+                  <div class="swap-on btn btn-neutral">親</div>
+                  <div class="swap-off btn">子</div>
+                </label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Type here"
+                  class="input input-bordered w-full max-w-xs"
+                />
+              </td>
+              <td>
+                <label class="swap swap-flip">
+                  <input type="checkbox" />
+                  <div class="swap-on btn btn-error">リーチ！</div>
+                  <div class="swap-off btn">リーチなし</div>
+                </label>
+              </td>
+            </tr>
+            <!-- row 2 -->
+            <tr class="">
+              <td>
+                <label class="swap swap-flip">
+                  <input
+                    type="radio"
+                    name="perspective_select"
+                    class="hidden"
+                  />
+                  <div class="swap-on btn btn-neutral">視点</div>
+                  <div class="swap-off btn"></div>
+                </label>
+              </td>
+              <td>
+                <label class="swap swap-flip">
+                  <input type="radio" name="parent_select" class="hidden" />
+                  <div class="swap-on btn btn-neutral">親</div>
+                  <div class="swap-off btn">子</div>
+                </label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Type here"
+                  class="input input-bordered w-full max-w-xs"
+                />
+              </td>
+              <td>
+                <label class="swap swap-flip">
+                  <input type="checkbox" />
+                  <div class="swap-on btn btn-error">リーチ！</div>
+                  <div class="swap-off btn">リーチなし</div>
+                </label>
+              </td>
+            </tr>
+            <!-- row 3 -->
+            <tr class="">
+              <td>
+                <label class="swap swap-flip">
+                  <input
+                    type="radio"
+                    name="perspective_select"
+                    class="hidden"
+                  />
+                  <div class="swap-on btn btn-neutral">視点</div>
+                  <div class="swap-off btn"></div>
+                </label>
+              </td>
+              <td>
+                <label class="swap swap-flip">
+                  <input type="radio" name="parent_select" class="hidden" />
+                  <div class="swap-on btn btn-neutral">親</div>
+                  <div class="swap-off btn">子</div>
+                </label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Type here"
+                  class="input input-bordered w-full max-w-xs"
+                />
+              </td>
+              <td>
+                <label class="swap swap-flip">
+                  <input type="checkbox" />
+                  <div class="swap-on btn btn-error">リーチ！</div>
+                  <div class="swap-off btn">リーチなし</div>
+                </label>
+              </td>
+            </tr>
+            <!-- row 4 -->
+            <tr class="">
+              <td>
+                <label class="swap swap-flip">
+                  <input
+                    type="radio"
+                    name="perspective_select"
+                    class="hidden"
+                  />
+                  <div class="swap-on btn btn-neutral">視点</div>
+                  <div class="swap-off btn"></div>
+                </label>
+              </td>
+              <td>
+                <label class="swap swap-flip">
+                  <input type="radio" name="parent_select" class="hidden" />
+                  <div class="swap-on btn btn-neutral">親</div>
+                  <div class="swap-off btn">子</div>
+                </label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Type here"
+                  class="input input-bordered w-full max-w-xs"
+                />
+              </td>
+              <td>
+                <label class="swap swap-flip">
+                  <input type="checkbox" />
+                  <div class="swap-on btn btn-error">リーチ！</div>
+                  <div class="swap-off btn">リーチなし</div>
+                </label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="w-50">
+        <p>供託情報</p>
+        <label class="input input-bordered flex items-center gap-2">
+          <input type="text" class="grow" placeholder="0" />
+          本場
+        </label>
+        <label class="input input-bordered flex items-center gap-2">
+          リーチ棒
+          <input type="text" class="grow" placeholder="0" />
+          本
+        </label>
+      </div>
     </div>
-    <script src="script.js"></script>
+
+    <div id="tab_content_2" class="card tab-content">
+      <!-- Content for 着順条件 tab -->
+      <p>ここに着順条件の内容を追加します。</p>
+    </div>
+
+    <script src="public/script.js"></script>
   </body>
 </html>

@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input[type="radio"].hidden {
+  display: none;
+}
+
+/* .swap-on, .swap-off {
+  transition: none;
+} */
+
+.display-only-badge {
+  pointer-events: none;
+}
