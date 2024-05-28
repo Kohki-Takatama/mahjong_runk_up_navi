@@ -148,7 +148,7 @@ const update_views = () => {
     e.textContent = point;
   });
   display_tr.forEach((e) => {
-    e.classList.remove('bg-gray-50', 'bg-red-100', 'bg-blue-100');
+    e.classList.remove('bg-gray-50', 'bg-red-100', 'bg-blue-100', 'bg-yellow-100');
   });
   display_point_diffs.forEach((e, i) => {
     e.classList.remove('hidden');
@@ -159,7 +159,9 @@ const update_views = () => {
       display_tr[i].classList.add('bg-gray-50');
     } else if (point_diff > 0) {
       display_tr[i].classList.add('bg-red-100');
-    } else {
+    } else if (point_diff === 0){
+      display_tr[i].classList.add('bg-yellow-100');
+    }else{
       display_tr[i].classList.add('bg-blue-100');
     }
   });
