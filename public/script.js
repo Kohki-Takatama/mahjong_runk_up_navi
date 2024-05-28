@@ -45,17 +45,17 @@ const setBodyHeight = () => {
 window.addEventListener('resize', setBodyHeight);
 window.addEventListener('load', setBodyHeight);
 
-document.addEventListener("DOMContentLoaded", function() {
-  const welcome_image = document.querySelector(".welcome");
-  const main_container = document.querySelector(".main_container");
+document.addEventListener('DOMContentLoaded', function () {
+  const welcome_image = document.querySelector('.welcome');
+  const main_container = document.querySelector('.main_container');
 
   // 指定秒後にフェードアウト・イン開始
   setTimeout(() => {
-    main_container.classList.add("fadein");
-    welcome_image.classList.add("fadeout");
+    main_container.classList.add('fadein');
+    welcome_image.classList.add('fadeout');
+    welcome_image.style.display = 'none'; // fadeinと重なるが、iOSでは優先度の関係か適応されないため、ここでも記述
   }, 1200);
 });
-
 
 const host_points_list = [
   [1500, 500, ['30符1翻']],
@@ -159,9 +159,9 @@ const update_views = () => {
       display_tr[i].classList.add('bg-gray-50');
     } else if (point_diff > 0) {
       display_tr[i].classList.add('bg-red-100');
-    } else if (point_diff === 0){
+    } else if (point_diff === 0) {
       display_tr[i].classList.add('bg-yellow-100');
-    }else{
+    } else {
       display_tr[i].classList.add('bg-blue-100');
     }
   });
@@ -191,7 +191,7 @@ const update_views = () => {
         perspective_is_host = !perspective_is_host;
         compare_is_host = !compare_is_host;
       }
-      diff = Math.abs(diff)
+      diff = Math.abs(diff);
     }
     if (perspective_is_host) {
       tumo = host_points_list.find((e) => diff <= e[1] * 4 + field_points[0] * 400 + riichi_point);
