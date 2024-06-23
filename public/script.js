@@ -2,7 +2,7 @@ const tabs = document.querySelectorAll('[role="tab"]');
 const tabContents = document.querySelectorAll('.tab-content');
 const applySwipeContents = document.querySelectorAll('body, .table');
 
-function activateTab(tabIndex) {
+function activate_tab_by_index(tabIndex) {
   tabs.forEach((tab, index) => {
     if (index === tabIndex) {
       tab.classList.add('tab-active');
@@ -15,7 +15,7 @@ function activateTab(tabIndex) {
 }
 
 tabs.forEach((tab, index) => {
-  tab.addEventListener('click', () => activateTab(index));
+  tab.addEventListener('click', () => activate_tab_by_index(index));
 });
 
 // Add swipe functionality
@@ -25,14 +25,14 @@ applySwipeContents.forEach((container) => {
   mc.on('swipeleft', () => {
     const activeTabIndex = [...tabs].findIndex((tab) => tab.classList.contains('tab-active'));
     if (activeTabIndex < tabs.length - 1) {
-      activateTab(activeTabIndex + 1);
+      activate_tab_by_index(activeTabIndex + 1);
     }
   });
 
   mc.on('swiperight', () => {
     const activeTabIndex = [...tabs].findIndex((tab) => tab.classList.contains('tab-active'));
     if (activeTabIndex > 0) {
-      activateTab(activeTabIndex - 1);
+      activate_tab_by_index(activeTabIndex - 1);
     }
   });
 });
