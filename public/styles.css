@@ -2336,10 +2336,6 @@ input.tab:checked + .tab-content,
   flex-grow: 1;
 }
 
-.resize {
-  resize: both;
-}
-
 .items-center {
   align-items: center;
 }
@@ -2391,10 +2387,6 @@ input.tab:checked + .tab-content,
   padding: 1.5rem;
 }
 
-.p-2 {
-  padding: 0.5rem;
-}
-
 .pb-6 {
   padding-bottom: 1.5rem;
 }
@@ -2443,6 +2435,7 @@ td {
 
 html,
 body {
+  min-height: 100vh;
   overflow: hidden;
 }
 

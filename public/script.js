@@ -37,14 +37,6 @@ applySwipeContents.forEach((container) => {
   });
 });
 
-// Set body height to viewport height
-const setBodyHeight = () => {
-  document.body.style.height = window.innerHeight + 'px';
-};
-
-window.addEventListener('resize', setBodyHeight);
-window.addEventListener('load', setBodyHeight);
-
 document.addEventListener('DOMContentLoaded', function () {
   const welcome_image = document.querySelector('.welcome');
   const main_container = document.querySelector('.main_container');
