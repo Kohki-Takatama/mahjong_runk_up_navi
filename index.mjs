@@ -14,7 +14,7 @@ const fastify = Fastify({
 
 //静的ファイルの提供設定
 fastify.register(fastifyStatic, {
-  root: path.join(__dirname, 'public'),
+  root: path.join(__dirname, 'public'), // このファイルがあるroot directory/publicを静的ファイルの提供元として設定
   prefix: '/public/', // リクエストのプレフィックスを設定
 })
 
