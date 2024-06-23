@@ -1,6 +1,6 @@
 const tabs = document.querySelectorAll('[role="tab"]');
 const tabContents = document.querySelectorAll('.tab-content');
-const applySwipeContents = document.querySelectorAll('body, .table');
+const contents_to_apply_swipe = document.querySelectorAll('body, .table');
 
 function activate_tab_by_index(tabIndex) {
   tabs.forEach((tab, index) => {
@@ -18,8 +18,8 @@ tabs.forEach((tab, index) => {
   tab.addEventListener('click', () => activate_tab_by_index(index));
 });
 
-// Add swipe functionality
-applySwipeContents.forEach((container) => {
+// スワイプ操作の適用
+contents_to_apply_swipe.forEach((container) => {
   const mc = new Hammer(container);
 
   mc.on('swipeleft', () => {
